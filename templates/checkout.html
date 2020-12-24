@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+	<p>Necesitas la aprobacion del encargado </p>
+	<div id="cartItems">
+	<h2>Estas retirando:</h2>
+	<div id="tableItems">
+		{% for row in products %}
+		<div>
+			<hr id="seperator">
+			<div id="itemName">
+				<span id="itemNameTag">{{row[1]}}</span><br>
+			</div>
+
+		</div>
+		{% endfor %}
+		<hr id="seperator">
+		<div id="total">
+			<span id="subtotal">Tienes 5 dias para entregarlo</span>
+			<span if="deliverydate"></span>
+		</div>
+		<div><a href="/">Return to Home Page</div>
+	</div>
+</div>
+
+{% endblock %}
